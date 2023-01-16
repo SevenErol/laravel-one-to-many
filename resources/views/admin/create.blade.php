@@ -49,7 +49,7 @@
                 <option selected>Select one</option>
 
                 @foreach ($types as $type )
-                <option value="{{$type->id}}" {{ old('type_id') ? 'selected' : '' }}>{{$type->name}}</option>
+                <option value="{{$type->id}}" {{ $type->id == old('type_id') ? 'selected' : ''  }}>{{$type->name}}</option>
                 @endforeach
 
             </select>
