@@ -38,7 +38,11 @@
                             <a href="{{ route ('admin.project.edit', $project->id) }}" type="button" class="btn btn-primary col-12 mb-3">Edit</a>
                         </div>
                         <div>
-                            <a href="/" type="button" class="btn btn-danger col-12 mb-3">Delete</a>
+
+                            <button data-bs-toggle="modal" data-bs-target="#delete-{{ $project->id }}" class="btn btn-danger col-12 mb-3">Delete</button>
+
+                            @include('partials.projects-modal')
+
                         </div>
                     </div>
                 </td>
