@@ -18,9 +18,9 @@ class TypeSeeder extends Seeder
         $types = ['HTML', 'Laravel', 'Vuejs', 'CSS', 'JavaScript', 'Bootstrap'];
 
         foreach ($types as $type) {
-            $newCategory = new Type();
-            $newCategory->name = $type;
-            $newCategory->save();
+            $newType = new Type();
+            $newType->name = $type;
+            $newType->save();
         }
     }
 }
