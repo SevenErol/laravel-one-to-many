@@ -13,6 +13,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">Date</th>
+                <th scope="col">Type</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -30,6 +31,10 @@
                 <td>{{ $project['title'] }}</td>
                 <td>{{ $project['description'] }}</td>
                 <td>{{ $project['date']}}</td>
+                <td class="type">
+                    <strong>Type:</strong>
+                    {{ $project->type ? $project->type->name : 'Uncategorized'}}
+                </td>
                 <td>
                     <div class="d-flex flex-column">
                         <div>
