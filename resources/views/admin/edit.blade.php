@@ -57,10 +57,10 @@
         <div class="mb-3">
             <label for="type_id" class="form-label">Types</label>
             <select class="form-select @error('type_id') 'is-invalid' @enderror" name="type_id" id="type_id">
-                <option selected>Select one</option>
+                <option>Select one</option>
 
                 @forelse ($types as $type )
-                <option value="{{$type->id}}" {{ old('type_id') ? 'selected' : '' }}>{{$type->name}}</option>
+                <option value="{{$type->id}}" {{ $type->id == old('type_id',  $project->type ? $project->type->id : '') ? 'selected' : ''  }}>{{$type->name}}</option>
                 @empty
 
                 <option value="">Sorry, no categories in the system.</option>
