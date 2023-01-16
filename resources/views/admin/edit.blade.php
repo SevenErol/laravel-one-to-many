@@ -54,6 +54,28 @@
             @enderror
         </div>
 
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Types</label>
+            <select class="form-select @error('type_id') 'is-invalid' @enderror" name="type_id" id="type_id">
+                <option selected>Select one</option>
+
+                @forelse ($types as $type )
+                <option value="{{$type->id}}" {{ old('type_id') ? 'selected' : '' }}>{{$type->name}}</option>
+                @empty
+
+                <option value="">Sorry, no categories in the system.</option>
+
+                @endforelse
+
+
+            </select>
+        </div>
+        @error('type_id')
+        <div class="alert alert-danger" role="alert">
+            {{$message}}
+        </div>
+        @enderror
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

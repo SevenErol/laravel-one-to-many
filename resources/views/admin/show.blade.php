@@ -31,10 +31,7 @@
                 <td>{{ $project['title'] }}</td>
                 <td>{{ $project['description'] }}</td>
                 <td>{{ $project['date']}}</td>
-                <td class="type">
-                    <strong>Type:</strong>
-                    {{ $project->type ? $project->type->name : 'Uncategorized'}}
-                </td>
+                <td class="type">{{ $project->type ? $project->type->name : 'Uncategorized'}}</td>
                 <td>
                     <div class="d-flex flex-column">
                         <div>
